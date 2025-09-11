@@ -12,7 +12,7 @@ def get_parser():
 
 def add_venv_to_path(archive_name):
     print(f"Adding {archive_name} to sys.path")
-    sys.path.append(f"{archive_name}/lib/python3.7/site-packages")
+    sys.path.append(f"{archive_name}/lib/python3.11/site-packages")
 
 
 def hail_process(args):
