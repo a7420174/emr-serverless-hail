@@ -14,7 +14,11 @@ aws emr-serverless start-job-run \
             "classification": "spark-defaults",
             "properties": {
                 "spark.serializer": "org.apache.spark.serializer.KryoSerializer",
-                "spark.kryo.registrator": "is.hail.kryo.HailKryoRegistrator"
+                "spark.kryo.registrator": "is.hail.kryo.HailKryoRegistrator",
+                "spark.hadoop.io.compression.codecs": "org.apache.hadoop.io.compress.DefaultCodec,is.hail.utils.CompressionCodecRuntimeClassLoader",
+                "spark.sql.broadcastTimeout": "1800",
+                "spark.sql.files.maxPartitionBytes": "2147483648",
+                "spark.sql.shuffle.partitions": "300"
             }
         }],
         "monitoringConfiguration": {
